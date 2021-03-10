@@ -10,24 +10,24 @@ import {
     SidebarLink
 } from './SidebarElements'; 
 
-const Sidebar = () => {
+const Sidebar = ({isOpen, toggle}) => {
     return (
-        <SidebarContainer>
-            <Icon>
+        <SidebarContainer isOpen = {isOpen} onClick = {toggle}>
+            <Icon onClick = {toggle}>
                 <CloseIcon />
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to="about">
+                    <SidebarLink to="about" onClick = {toggle}>
                         About
                     </SidebarLink>
-                    <SidebarLink to="products">
+                    <SidebarLink to="products" onClick = {toggle}>
                         Products
                     </SidebarLink>
-                    <SidebarLink to="services">
+                    <SidebarLink to="services" onClick = {toggle}>
                         Services
                     </SidebarLink>
-                    <SidebarLink to="contact">
+                    <SidebarLink to="contact" onClick = {toggle}>
                         Contact
                     </SidebarLink>
                 </SidebarMenu>
