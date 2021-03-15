@@ -1,4 +1,6 @@
 import React from 'react'
+import {FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaLinkedin } from 'react-icons/fa'
+import {animateScroll as scroll} from 'react-scroll';
 import{
     FooterContainer,
     FooterWrap,
@@ -6,10 +8,20 @@ import{
     FooterLinksWrapper,
     FooterLinkItems,
     FooterLinkTitle,
-    FooterLink
+    FooterLink,
+    SocialIconLink,
+    SocialIcons,
+    SocialLogo,
+    SocialMedia,
+    SocialMediaWrap,
+    WebsiteRights
+    
 } from './FooterElements'
 
 const Footer = () => {
+    const toggleHome = () => {
+        scroll.scrollToTop();
+     }
     return (
         <FooterContainer>
             <FooterWrap>
@@ -58,6 +70,29 @@ const Footer = () => {
                         
                     </FooterLinksWrapper>
                 </FooterLinksContainer>
+                <SocialMedia>
+                    <SocialMediaWrap>
+                        <SocialLogo to = '/' onClick = {toggleHome}> moon eye </SocialLogo>
+                        <WebsiteRights>mooneye@ {new Date().getFullYear()} All Rights Reserved</WebsiteRights>
+                        <SocialIcons>
+                            <SocialIconLink href = "/" target = "_blank" aria-lable = "Facebook">
+                                <FaFacebook />
+                            </SocialIconLink>
+                            <SocialIconLink href = "/" target = "_blank" aria-lable = "Instagram">
+                                <FaInstagram />
+                            </SocialIconLink>
+                            <SocialIconLink href = "/" target = "_blank" aria-lable = "Youtube">
+                                <FaYoutube />
+                            </SocialIconLink>
+                            <SocialIconLink href = "/" target = "_blank" aria-lable = "Twitter">
+                                <FaTwitter />
+                            </SocialIconLink>
+                            <SocialIconLink href = "//www.twitter.com" target = "_blank" aria-lable = "Linkedin">
+                                <FaLinkedin />
+                            </SocialIconLink>
+                        </SocialIcons>
+                    </SocialMediaWrap>
+                </SocialMedia>
             </FooterWrap>
         </FooterContainer>
     )

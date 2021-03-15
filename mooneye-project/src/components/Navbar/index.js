@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
+import {IconContext} from 'react-icons/lib'
+// import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll';
+import {animateScroll as scroll} from 'react-scroll';
 import {Nav,
     NavbarContainer,
     NavLogo,MobileIcon, 
@@ -11,11 +14,29 @@ import {Nav,
 } from './NavbarElements';
 
 const Navbar = ({toggle}) => {
+    const [scrollNav, setScrollNav] = useState(false);
+
+    const changedNav = () => {
+        if(window.scrollY >= 80){
+            setScrollNav(true)
+        } else {
+            setScrollNav(false)
+        }
+    }
+
+    useEffect (() => {
+        window.addEventListener('scroll',changedNav)
+    }, []);
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+     }
     return (
         <>
-            <Nav>
+        <IconContext.Provider value = {{color: '#fff'}}>
+            <Nav scrollNav = {scrollNav}>
                 <NavbarContainer>
-                    <NavLogo to='/'>
+                    <NavLogo to='/' onClick = {toggleHome} >
                         MoonEyeElectronics
                     </NavLogo>
 
@@ -25,16 +46,44 @@ const Navbar = ({toggle}) => {
 
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to="about">About</NavLinks>
+                            <NavLinks to="about"
+                            smooth= {true}
+                            duration = {500}
+                            spy = {true}
+                            exact= 'true'
+                            offset = {-80}
+                            activeClass = "active"
+                            >About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="products">Products</NavLinks>
+                            <NavLinks to="products"
+                            smooth= {true}
+                            duration = {500}
+                            spy = {true}
+                            exact= 'true'
+                            offset = {-80}
+                            activeClass = "active"
+                            >Products</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="services">Services</NavLinks>
+                            <NavLinks to="services"
+                            smooth= {true}
+                            duration = {500}
+                            spy = {true}
+                            exact= 'true'
+                            offset = {-80}
+                            activeClass = "active"
+                            >Services</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="contact">Contact</NavLinks>
+                            <NavLinks to="contact"
+                            smooth= {true}
+                            duration = {500}
+                            spy = {true}
+                            exact= 'true'
+                            offset = {-80}
+                            activeClass = "active"
+                            >Contact</NavLinks>
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
@@ -43,6 +92,7 @@ const Navbar = ({toggle}) => {
 
                 </NavbarContainer>
             </Nav>
+        </IconContext.Provider>
         </>
     )
 }
