@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 
 export const ServicesContainer = styled.div`
-    height: 800px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #010606;
+    background: #fff;
 
     @media screen and (max-width: 768px){
         height: 1100px;
@@ -64,7 +64,7 @@ export const ServicesIcon = styled.img`
 
 export const ServicesH1 = styled.h1`
     font-size: 2.5rem;
-    color: #fff;
+    color: radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(59,41,33,1) 0.3%, rgba(38,26,21,1) 90.2% );
     margin-bottom: 64px;
 
     @media screen and (max-width: 480px){

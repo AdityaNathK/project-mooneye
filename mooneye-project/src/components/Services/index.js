@@ -1,7 +1,7 @@
 import React from 'react';
-import Icon1 from '../../images/svgimage.svg';
-import Icon2 from '../../images/svgimage.svg';
-import Icon3 from '../../images/svgimage.svg';
+import Icon1 from '../../images/installation.svg';
+import Icon2 from '../../images/best-quality.svg';
+import Icon3 from '../../images/support.svg';
 import{
     ServicesContainer,
     ServicesH1,
@@ -14,28 +14,28 @@ import{
 
 const Services = () => {
     return (
-        <ServicesContainer id = 'products'>
-            <ServicesH1> Our Products</ServicesH1>
+        <ServicesContainer id = 'services'>
+            <ServicesH1> Our Commitment</ServicesH1>
             <ServicesWrapper>
                 <ServicesCard>
                     <ServicesIcon src = {Icon1}/>
-                        <ServicesH2>Reduce Expenses</ServicesH2>
+                        <ServicesH2>Easy Installation</ServicesH2>
                         <ServicesP>
-                            asdasd asd asd asd asd asdasdasd asdasd sd asd asd asdasdasd ad asdasd
+                            We provide our customers quick and easy installation of our products.
                         </ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src = {Icon2}/>
-                        <ServicesH2>Exp 3Expenses</ServicesH2>
+                        <ServicesH2>Quality Assured</ServicesH2>
                         <ServicesP>
-                            asdasd asd asd asd asd asdasdasd asdasd sd asd asd asdasdasd ad asdasd
+                           We build our components safe and secure with greate quality standards to satisfy the needs of every customer and to give a great value for money
                         </ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src = {Icon3}/>
-                        <ServicesH2>Reduce 14 </ServicesH2>
+                        <ServicesH2>Quick Support</ServicesH2>
                         <ServicesP>
-                            asdasd asd asd asd asd asdasdasd asdasd sd asd asd asdasdasd ad asdasd
+                            We provide complete support and excellent maintenance services for our customers
                         </ServicesP>
                 </ServicesCard>
             </ServicesWrapper>

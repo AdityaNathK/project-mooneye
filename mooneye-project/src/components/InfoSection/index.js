@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button} from '../ButtonElements';
+import BgImage from '../../images/features.png'
 import { 
     InfoContainer, 
     InfoWrapper, 

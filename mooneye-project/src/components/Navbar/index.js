@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib'
+import MainLogo from '../../images/main-logo.png'
 // import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll';
 import {animateScroll as scroll} from 'react-scroll';
 import {Nav,
@@ -10,7 +11,10 @@ import {Nav,
     NavItem, 
     NavLinks,
     NavBtn,
-    NavBtnLink
+    NavBtnLink,
+    NavLogoContainer,
+    NavLogoImage,
+    Img
 } from './NavbarElements';
 
 const Navbar = ({toggle}) => {
@@ -37,8 +41,13 @@ const Navbar = ({toggle}) => {
             <Nav scrollNav = {scrollNav}>
                 <NavbarContainer>
                     <NavLogo to='/' onClick = {toggleHome} >
-                        MoonEyeElectronics
+                        <NavLogoContainer>
+                            <NavLogoImage>
+                                <Img src= {MainLogo} alt = 'logo'/>
+                            </NavLogoImage>
+                        </NavLogoContainer>
                     </NavLogo>
+                    
 
                     <MobileIcon onClick = {toggle}>
                         <FaBars/>
@@ -46,7 +55,7 @@ const Navbar = ({toggle}) => {
 
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to="about"
+                            <NavLinks to="/about"
                             smooth= {true}
                             duration = {500}
                             spy = {true}
@@ -75,7 +84,7 @@ const Navbar = ({toggle}) => {
                             activeClass = "active"
                             >Services</NavLinks>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <NavLinks to="contact"
                             smooth= {true}
                             duration = {500}
@@ -84,7 +93,7 @@ const Navbar = ({toggle}) => {
                             offset = {-80}
                             activeClass = "active"
                             >Contact</NavLinks>
-                        </NavItem>
+                        </NavItem> */}
                     </NavMenu>
                     <NavBtn>
                         <NavBtnLink to="/contact">Contact Us</NavBtnLink>            

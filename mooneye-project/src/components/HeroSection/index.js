@@ -30,7 +30,7 @@ const HeroSection = () => {
                     A Strategic Electronic Company Focused in Innovative Products
                 </HeroH1>
                 <HeroP>
-                    sample text
+                    Feel the Presense of fun
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button to = "contact" 
